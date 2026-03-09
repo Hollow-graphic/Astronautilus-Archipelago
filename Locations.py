@@ -4,17 +4,87 @@ from BaseClasses import Location
 from .Names import LocationName, RegionName
 
 
-astronautilus_base_id: int = 0x7F0000
+astronautilus_base_id: int = 0xCA0000
 
 
 class AstronautilusLocation(Location):
-    game = "Celeste 64"
+    game = "Astronautilus"
 
 
 class AstronautilusLocationData(NamedTuple):
     region: str
     address: Optional[int] = None
 
+strawberry_location_data_table: Dict[str, AstronautilusLocationData] = {
+    LocationName.strawberry_1:  AstronautilusLocationData(RegionName.intro_islands,        celeste_64_base_id + 0x00),
+    LocationName.strawberry_2:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x01),
+    LocationName.strawberry_3:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x02),
+    LocationName.strawberry_4:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x03),
+    LocationName.strawberry_5:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x04),
+    LocationName.strawberry_6:  AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x05),
+    LocationName.strawberry_7:  AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x06),
+    LocationName.strawberry_8:  AstronautilusLocationData(RegionName.nw_girders_island,    celeste_64_base_id + 0x07),
+    LocationName.strawberry_9:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x08),
+    LocationName.strawberry_10: AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x09),
+    LocationName.strawberry_11: AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x0A),
+    LocationName.strawberry_12: AstronautilusLocationData(RegionName.badeline_tower_lower, celeste_64_base_id + 0x0B),
+    LocationName.strawberry_13: AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x0C),
+    LocationName.strawberry_14: AstronautilusLocationData(RegionName.ne_feathers_island,   celeste_64_base_id + 0x0D),
+    LocationName.strawberry_15: AstronautilusLocationData(RegionName.ne_feathers_island,   celeste_64_base_id + 0x0E),
+    LocationName.strawberry_16: AstronautilusLocationData(RegionName.ne_feathers_island,   celeste_64_base_id + 0x0F),
+    LocationName.strawberry_17: AstronautilusLocationData(RegionName.se_house_island,      celeste_64_base_id + 0x10),
+    LocationName.strawberry_18: AstronautilusLocationData(RegionName.se_house_island,      celeste_64_base_id + 0x11),
+    LocationName.strawberry_19: AstronautilusLocationData(RegionName.se_house_island,      celeste_64_base_id + 0x12),
+    LocationName.strawberry_20: AstronautilusLocationData(RegionName.badeline_tower_lower, celeste_64_base_id + 0x13),
+    LocationName.strawberry_21: AstronautilusLocationData(RegionName.cassette_1,           celeste_64_base_id + 0x14),
+    LocationName.strawberry_22: AstronautilusLocationData(RegionName.cassette_2,           celeste_64_base_id + 0x15),
+    LocationName.strawberry_23: AstronautilusLocationData(RegionName.cassette_3,           celeste_64_base_id + 0x16),
+    LocationName.strawberry_24: AstronautilusLocationData(RegionName.cassette_4,           celeste_64_base_id + 0x17),
+    LocationName.strawberry_25: AstronautilusLocationData(RegionName.cassette_5,           celeste_64_base_id + 0x18),
+    LocationName.strawberry_26: AstronautilusLocationData(RegionName.cassette_6,           celeste_64_base_id + 0x19),
+    LocationName.strawberry_27: AstronautilusLocationData(RegionName.cassette_7,           celeste_64_base_id + 0x1A),
+    LocationName.strawberry_28: AstronautilusLocationData(RegionName.cassette_8,           celeste_64_base_id + 0x1B),
+    LocationName.strawberry_29: AstronautilusLocationData(RegionName.cassette_9,           celeste_64_base_id + 0x1C),
+    LocationName.strawberry_30: AstronautilusLocationData(RegionName.cassette_10,          celeste_64_base_id + 0x1D),
+}
+
+friend_location_data_table: Dict[str, AstronautilusLocationData] = {
+    LocationName.granny_1:   AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x00),
+    LocationName.granny_2:   AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x01),
+    LocationName.granny_3:   AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x02),
+    LocationName.theo_1:     AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x03),
+    LocationName.theo_2:     AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x04),
+    LocationName.theo_3:     AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x100 + 0x05),
+    LocationName.badeline_1: AstronautilusLocationData(RegionName.badeline_island, celeste_64_base_id + 0x100 + 0x06),
+    LocationName.badeline_2: AstronautilusLocationData(RegionName.badeline_island, celeste_64_base_id + 0x100 + 0x07),
+    LocationName.badeline_3: AstronautilusLocationData(RegionName.badeline_island, celeste_64_base_id + 0x100 + 0x08),
+}
+
+sign_location_data_table: Dict[str, AstronautilusLocationData] = {
+    LocationName.sign_1: AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x200 + 0x00),
+    LocationName.sign_2: AstronautilusLocationData(RegionName.granny_island,   celeste_64_base_id + 0x200 + 0x01),
+    LocationName.sign_3: AstronautilusLocationData(RegionName.highway_island,  celeste_64_base_id + 0x200 + 0x02),
+    LocationName.sign_4: AstronautilusLocationData(RegionName.se_house_island, celeste_64_base_id + 0x200 + 0x03),
+    LocationName.sign_5: AstronautilusLocationData(RegionName.badeline_island, celeste_64_base_id + 0x200 + 0x04),
+}
+
+car_location_data_table: Dict[str, AstronautilusLocationData] = {
+    LocationName.car_1: AstronautilusLocationData(RegionName.intro_islands, celeste_64_base_id + 0x300 + 0x00),
+    LocationName.car_2: AstronautilusLocationData(RegionName.granny_island, celeste_64_base_id + 0x300 + 0x01),
+}
+
+checkpoint_location_data_table: Dict[str, AstronautilusLocationData] = {
+    LocationName.checkpoint_1:  AstronautilusLocationData(RegionName.intro_islands,        celeste_64_base_id + 0x400 + 0x00),
+    LocationName.checkpoint_2:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x400 + 0x01),
+    LocationName.checkpoint_3:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x400 + 0x02),
+    LocationName.checkpoint_4:  AstronautilusLocationData(RegionName.granny_island,        celeste_64_base_id + 0x400 + 0x03),
+    LocationName.checkpoint_5:  AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x400 + 0x04),
+    LocationName.checkpoint_6:  AstronautilusLocationData(RegionName.highway_island,       celeste_64_base_id + 0x400 + 0x05),
+    LocationName.checkpoint_7:  AstronautilusLocationData(RegionName.ne_feathers_island,   celeste_64_base_id + 0x400 + 0x06),
+    LocationName.checkpoint_8:  AstronautilusLocationData(RegionName.se_house_island,      celeste_64_base_id + 0x400 + 0x07),
+    LocationName.checkpoint_9:  AstronautilusLocationData(RegionName.badeline_tower_upper, celeste_64_base_id + 0x400 + 0x08),
+    LocationName.checkpoint_10: AstronautilusLocationData(RegionName.badeline_island,      celeste_64_base_id + 0x400 + 0x09),
+}
 
 shop1_item_location_data_table: Dict[str, AstronautilusLocationData] = {
     LocationName.shop1_item1:  AstronautilusLocationData(RegionName.shop_1,        astronautilus_base_id + 0x10),
@@ -80,6 +150,11 @@ location_data_table: Dict[str, AstronautilusLocationData] = {**shop1_item_locati
                                                          **shop3_item_location_data_table,
                                                          **shop4_item_location_data_table,
                                                          **shop5_item_location_data_table,
-                                                         **world_location_data_table}
+                                                         **world_location_data_table,
+                                                         **strawberry_location_data_table,
+                                                         **friend_location_data_table,
+                                                         **sign_location_data_table,
+                                                         **car_location_data_table,
+                                                         **checkpoint_location_data_table}
 
 location_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
