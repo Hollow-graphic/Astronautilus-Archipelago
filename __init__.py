@@ -7,7 +7,7 @@ from .Items import AstronautilusItem, unlockable_item_data_table, move_item_data
                                   checkpoint_item_data_table, discount_item_data_table, item_table
 from .Locations import AstronautilusLocation, strawberry_location_data_table, friend_location_data_table,\
                                           sign_location_data_table, car_location_data_table, checkpoint_location_data_table,\
-                                          location_table
+                                          location_table, shop_location_data_table
 from .Names import ItemName, LocationName
 from .Options import AstronautilusOptions, astronautilus_option_groups, resolve_options
 
@@ -147,6 +147,11 @@ class AstronautilusWorld(World):
             
             region.add_locations({
                 location_name: location_data.address for location_name, location_data in strawberry_location_data_table.items()
+                if location_data.region == region_name
+            }, AstronautilusLocation)
+
+            region.add_locations({
+                location_name: location_data.address for location_name, location_data in shop_location_data_table.items()
                 if location_data.region == region_name
             }, AstronautilusLocation)
 
