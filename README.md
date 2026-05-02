@@ -4,6 +4,7 @@
 2. Unzip it to the game root directory
 3. Get the archipelago mods zip from latest released from [DeadCellsArchipelago](https://github.com/Maxlamenace572/DeadCellsArchipelago)
 4. Unzip the mods.zip in the coremod folder
+5. Start the DeadCellsModding.exe in Dead Cells\coremod\core\host\startup\DeadCellsModding.exe 
 
 The folder structure should be similar to the following
 ```txt
